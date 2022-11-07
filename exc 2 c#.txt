@@ -1,0 +1,59 @@
+
+namespace 23/09
+{
+class Program
+{
+static void Main(string[] args)
+{
+
+Aluno a1 = new Aluno();
+a1.Nome = "Mateus";
+a1.Matricula = 235;
+a1.Email = "mateus@gmail.com";
+
+Aluno a2 = new Aluno();
+a2.Nome = "Jose";
+a2.Matricula = 987;
+a2.Email = "jose@xy.com";
+
+Aluno a3 = new Aluno();
+
+a3.Nome = "Pedro";
+a3.Matricula = 949;
+a3.Email = "pedro@ig.com";
+
+a1.imprimir();
+a2.imprimir();
+a3.imprimir();
+
+Console.ReadKey();
+}
+          }
+        }
+
+{
+    class aluno
+{
+
+
+private String nome;
+private int matricula;
+private String email;
+public String Nome { get => nome; set => nome = value; }
+
+// get e set nome
+
+public int Matricula {get => matricula; set => matricula = value; }
+
+// get e set matricula
+
+// get e set email
+
+public String Email {get => email; set => email = value; }
+
+public void imprimir()
+{
+Console.WriteLine(this.nome + " " +this.matricula + " " +this.email);
+}
+          }
+       }

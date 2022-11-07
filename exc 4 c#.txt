@@ -1,0 +1,72 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Aluno a1 = new Aluno();
+            a1.Nome = “Paulo";
+            a1.Matricula=753;
+            a1.Email="paulo@gmail.com";
+
+            Aluno a2 = new Aluno("Ana");
+            a2.Matricula=136;
+            a2.Email="ana@xy.com";
+
+            Aluno a3 = new Aluno("Eric", 988, "Eric@ig.com");
+
+            a1.imprimir();
+            a2.imprimir();
+            a3.imprimir();
+
+            Console.ReadKey();
+        }
+    }
+    }
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Aluno
+    {
+            
+        public String Nome { get; set; }
+        public int Matricula { get; set; }
+        public String Email { get; set; }
+
+
+        public void imprimir()
+        {
+            Console.WriteLine(this.Nome + " " + this.Matricula + " " + this.Email);        }
+
+        public Aluno(string nome)
+        {
+            this.Nome = nome;
+        }
+
+        public Aluno()
+        {
+        }
+
+        public Aluno(string nome, int matricula, string email)
+        {
+            this.Nome = nome;
+            this.Matricula = matricula;
+            this.Email = email;
+        }
+
+
+    }
+
+}

@@ -1,0 +1,131 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace ConsoleApp5
+{
+    class Funcionario
+    {
+        //ATRIBUTOS
+        private string nome_;
+        private int matricula_;
+        private string cpf_;
+
+
+        public Funcionario(string nome, int matricula, string cpf)
+        {
+            nome_ = nome;
+            matricula_ = matricula;
+            cpf_ = cpf;
+        }
+
+        public string Nome {
+            get
+            {
+                return nome_;
+            }
+            set
+            {
+                nome_ = value;
+            }
+        }
+        public int Matricula
+        {
+            get
+            {
+                return matricula_;
+            }
+            set
+            {
+                matricula_ = value;
+            }
+        }
+        public string Cpf
+        {
+            get
+            {
+                return cpf_;
+            }
+            set
+            {
+                cpf_ = value;
+            }
+        }
+
+        public void ImprimeFuncionario()
+        {
+            Console.WriteLine("\nNome do funcionario:" + nome_ + "\nMatricula: " + matricula_ + "\nCpf: " + cpf_);
+        }
+    }
+}
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+using System;
+
+namespace ConsoleApp5
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Funcionario func1 = new Funcionario("Kaue", 321, "6765926");
+            Funcionario func2 = new Funcionario("Fernando", 987, "2213857");
+            Departamento vendas = new Departamento("VENDAS");
+
+            vendas.AdicionaFuncionario(func1);
+            vendas.AdicionaFuncionario(func2);
+            vendas.ImprimeDepartamento();
+        }
+    }
+}
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+using System;
+using System.Collections.Generic;
+using System.Collections;
+using System.Text;
+
+namespace ConsoleApp5
+{
+    class Departamento
+    {
+        private string nome_;
+        ArrayList listaFuncionarios = new ArrayList();
+
+        public Departamento(string nome)
+        {
+            nome_ = nome;
+        }
+
+        public string Nome
+        {
+            get
+            {
+                return nome_;
+            }
+            set
+            {
+                nome_ = value;
+            }
+        }
+
+        public void AdicionaFuncionario(Funcionario f)
+        {
+            listaFuncionarios.Add(f);
+        }
+
+        public void ImprimeDepartamento()
+        {
+            Console.WriteLine("--------Funcionarios do departamento " + nome_ + "--------");
+            foreach(Funcionario f in listaFuncionarios)
+            {
+                Console.WriteLine(f.Nome + "\n");
+            }
+            Console.WriteLine("--------Fim do departamento--------");
+        }
+
+
+    }
+}
